@@ -38,6 +38,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -87,6 +88,13 @@ public class AboutActivity extends DialogActivity implements ActionAdapter.Liste
     private static final String SETTINGS_ADS_ACTIVITY_PACKAGE = "com.google.android.gms";
     private static final String SETTINGS_ADS_ACTIVITY_ACTION =
             "com.google.android.gms.settings.ADS_PRIVACY";
+
+    /**
+     * Get the build date.
+     */
+    public static String getBuildDate() {
+        return SystemProperties.get("ro.build.date");
+    }
 
     /**
      * Intent component to launch PlatLogo Easter egg.
@@ -245,6 +253,12 @@ public class AboutActivity extends DialogActivity implements ActionAdapter.Liste
                 .key("serial")
                 .title(getString(R.string.about_serial))
                 .description(Build.SERIAL)
+                .enabled(false)
+                .build());
+        actions.add(new Action.Builder()
+                .key("build_date")
+                .title(getString(R.string.about_build_date))
+                .description(getBuildDate())
                 .enabled(false)
                 .build());
         actions.add(new Action.Builder()
