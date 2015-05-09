@@ -44,4 +44,9 @@
     <string name="system_display">Display</string>
     <string name="system_display_overscan">Overscan</string>
     <string name="system_display_overscan_description">Calibrate the display to fit your screen size.</string>
+
+    <!-- About screen, manufacturer label  [CHAR LIMIT=40] -->
+    <string name="device_manufacturer">Manufacturer</string>
+    <!-- Device Info screen. Used for a status item's value when the proper value is not known -->
+    <string name="device_info_default">Unknown</string>
 </resources>

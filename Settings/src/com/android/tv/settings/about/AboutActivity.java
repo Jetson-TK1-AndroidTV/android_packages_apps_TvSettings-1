@@ -304,6 +304,12 @@ public class AboutActivity extends DialogActivity implements ActionAdapter.Liste
                     .build());
         }
         actions.add(new Action.Builder()
+                .key("manufacturer")
+                .title(getString(R.string.device_manufacturer))
+                .description(Build.MANUFACTURER)
+                .enabled(false)
+                .build());
+        actions.add(new Action.Builder()
                 .key("model")
                 .title(getString(R.string.about_model))
                 .description(Build.MODEL)
